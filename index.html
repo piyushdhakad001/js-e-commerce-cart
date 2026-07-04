@@ -1,13 +1,44 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  
-  <script src="script.js"></script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="left-container">
+        <div class="cart-container">
+          
+          <div class="cart" id="1st">
+            <img src="Images/apple.jpg" alt="" class="apple" />
+            <div class="details">
+              <p class="Item-name"></p>
+              <p class="Item-price">$2.00</p>
+            </div>
+            <div class="quantity-div">
+              <button class="decrease-quantity">−</button>
+
+              <p class="quantity">$0</p>
+              <button class="increase-quantity">+</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div class="checkout-container">
+          <div class="checkout-heading">Your Basket</div>
+         
+          <div class="selected-item-container"></div>
+          
+          <div class="total-div">
+            <p class="total-text">Total</p>
+          <p class="total-amount">$0</p>
+          </div>
+          <div class="checkout-button">Continue to Checkout</div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
 </html>
