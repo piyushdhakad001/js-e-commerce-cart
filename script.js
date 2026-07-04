@@ -123,6 +123,7 @@ function renderProduct() {
           quant: cart.quant,
         });
       }
+      totalCheckoutAmount();
       renderCheckoutProduct();
     });
     decButton.addEventListener("click", () => {
@@ -144,6 +145,7 @@ function renderProduct() {
           quant: cart.quant,
         });
       }
+      totalCheckoutAmount();
       renderCheckoutProduct();
     });
     container.appendChild(cartContainer);
@@ -189,3 +191,11 @@ total = 0;
   });
 }
 
+function totalCheckoutAmount(){
+  selectedProduct.forEach((cart) => {
+        totalAmount.innerHTML = "";
+        total += parseInt(cart.price * cart.quant);
+        
+      });
+totalAmount.innerHTML = `$${total}`;
+}
