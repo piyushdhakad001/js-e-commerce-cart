@@ -161,7 +161,7 @@ function renderProduct() {
 
 function renderCheckoutProduct() {
   // Basket
-
+total = 0;
   console.log(selectedProduct);
   selectedItemContainer.innerHTML = "";
   selectedProduct.forEach((cart) => {
@@ -183,6 +183,9 @@ function renderCheckoutProduct() {
     oneBigContainer.appendChild(selectedItemPrice);
     selectedItemDiv.appendChild(oneBigContainer);
     selectedItemContainer.appendChild(selectedItemDiv);
-  
+    if (cart.quant <= 0) {
+      selectedItemDiv.innerHTML = "";
+    }
   });
 }
+
