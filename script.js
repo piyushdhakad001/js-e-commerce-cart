@@ -107,7 +107,24 @@ function renderProduct() {
     const incButton = document.createElement("button");
     incButton.textContent = "+";
 
-    
+    incButton.addEventListener("click", () => {
+      cart.quant++;
+      quantityPara.textContent = cart.quant;
+
+      const existing = selectedProduct.find((item) => item.id === cart.id);
+
+      if (existing) {
+        existing.quant = cart.quant;
+      } else {
+        selectedProduct.push({
+          id: `${cart.id}`,
+          name: `${cart.name}`,
+          price: `${cart.price}`,
+          quant: cart.quant,
+        });
+      }
+      renderCheckoutProduct();
+    });
     container.appendChild(cartContainer);
     cartContainer.appendChild(cartDiv);
     cartDiv.appendChild(img);
@@ -118,5 +135,33 @@ function renderProduct() {
     quantityDiv.appendChild(decButton);
     quantityDiv.appendChild(quantityPara);
     quantityDiv.appendChild(incButton);
+  });
+}
+
+function renderCheckoutProduct() {
+  // Basket
+
+  console.log(selectedProduct);
+  selectedItemContainer.innerHTML = "";
+  selectedProduct.forEach((cart) => {
+    const selectedItemDiv = document.createElement("div");
+
+    const oneproductDiv = document.createElement("div");
+    const selectedItemName = document.createElement("p");
+    selectedItemName.innerHTML = `${cart.name}`;
+    const selectedItemPrice = document.createElement("p");
+    selectedItemPrice.innerHTML = `$${cart.price * cart.quant}`;
+    const eachItemPrice = document.createElement("p");
+    eachItemPrice.textContent = `$${cart.price} each`;
+    const oneBigContainer = document.createElement("div");
+    oneBigContainer.classList.add("selected-item-div");
+
+    oneproductDiv.appendChild(selectedItemName);
+    oneproductDiv.appendChild(eachItemPrice);
+    oneBigContainer.appendChild(oneproductDiv);
+    oneBigContainer.appendChild(selectedItemPrice);
+    selectedItemDiv.appendChild(oneBigContainer);
+    selectedItemContainer.appendChild(selectedItemDiv);
+  
   });
 }
