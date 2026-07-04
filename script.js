@@ -125,6 +125,27 @@ function renderProduct() {
       }
       renderCheckoutProduct();
     });
+    decButton.addEventListener("click", () => {
+      if (cart.quant <= 0) return;
+
+      cart.quant--;
+
+      quantityPara.textContent = cart.quant;
+
+      const existing = selectedProduct.find((item) => item.id === cart.id);
+
+      if (existing) {
+        existing.quant = cart.quant;
+      } else {
+        selectedProduct.push({
+          id: `${cart.id}`,
+          name: `${cart.name}`,
+          price: `${cart.price}`,
+          quant: cart.quant,
+        });
+      }
+      renderCheckoutProduct();
+    });
     container.appendChild(cartContainer);
     cartContainer.appendChild(cartDiv);
     cartDiv.appendChild(img);
