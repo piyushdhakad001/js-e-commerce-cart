@@ -56,7 +56,7 @@ const carts = [
   {
     id: `${crypto.randomUUID()}`,
     img: "Images/watermelon(slice).jpg",
-    name: "Watermelon (slice)",
+    name: "Watermelon (slice",
     price: 3,
   },
 ];
@@ -126,6 +126,7 @@ function renderProduct() {
       totalCheckoutAmount();
       renderCheckoutProduct();
     });
+
     decButton.addEventListener("click", () => {
       if (cart.quant <= 0) return;
 
@@ -148,6 +149,7 @@ function renderProduct() {
       totalCheckoutAmount();
       renderCheckoutProduct();
     });
+
     container.appendChild(cartContainer);
     cartContainer.appendChild(cartDiv);
     cartDiv.appendChild(img);
@@ -190,6 +192,7 @@ total = 0;
     }
   });
 }
+
 
 function totalCheckoutAmount(){
   selectedProduct.forEach((cart) => {

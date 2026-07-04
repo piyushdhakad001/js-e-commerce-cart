@@ -22,7 +22,7 @@
   flex-direction: column;
   margin: 10px;
   padding: 10px;
-  max-width: 40vw;
+  max-width: 30vw;
   max-height: 100vh;
   border: 2px solid ;
 }
@@ -35,7 +35,7 @@ img{
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: large;
+  font-size: xx-large;
   margin-top: 20px;
 }
 
@@ -78,4 +78,19 @@ button{
 }
 .checkout-button{
   margin-top: 20px;
+}
+
+.selected-item-container{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  
+}
+.selected-item-div{
+  display: flex;
+  justify-content: space-between;
+  /* border: 2px white dashed; */
+  border-bottom: 1px solid grey;
+  margin: 2%;
+  /* width: 100%; */
 }
