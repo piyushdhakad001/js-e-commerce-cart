@@ -14,7 +14,7 @@
 }
 .cart-container{
   display: grid;
-  /* grid-template-columns: 1fr 1fr; */
+  grid-template-columns: 1fr 1fr;
 }
 
 .cart{
@@ -22,7 +22,7 @@
   flex-direction: column;
   margin: 10px;
   padding: 10px;
-  max-width: 30vw;
+  max-width: 40vw;
   max-height: 100vh;
   border: 2px solid ;
 }
@@ -35,7 +35,7 @@ img{
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: xx-large;
+  font-size: large;
   margin-top: 20px;
 }
 
