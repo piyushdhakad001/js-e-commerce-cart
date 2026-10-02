@@ -56,7 +56,7 @@ const carts = [
   {
     id: `${crypto.randomUUID()}`,
     img: "Images/watermelon(slice).jpg",
-    name: "Watermelon (slice",
+    name: "Watermelon (slice)",
     price: 3,
   },
 ];
